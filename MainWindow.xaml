@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <ComboBox Name="cbxAgenda" HorizontalAlignment="Left" Margin="20,16,0,0" VerticalAlignment="Top" Width="231" Height="32" SelectionChanged="cbxAgenda_SelectionChanged" VerticalContentAlignment="Center"/>
+        <Button x:Name="btnAggiungiContatto" Content="Aggiungi contatto" HorizontalAlignment="Left" Margin="270,23,0,0" VerticalAlignment="Top" Width="123" Click="btnAggiungiContatto_Click" />
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="452,15,0,0" TextWrapping="Wrap" Text="Nome contatto" VerticalAlignment="Top" Width="234" Height="27" VerticalContentAlignment="Center" Visibility="Collapsed"/>
+        <TextBox x:Name="txtIp" HorizontalAlignment="Left" Margin="452,52,0,0" TextWrapping="Wrap" Text="Ip contatto" VerticalAlignment="Top" Width="234" Height="27" VerticalContentAlignment="Center" Visibility="Collapsed" />
+        <ListBox x:Name="lbxChat" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="53,0,447,0" VerticalAlignment="Center" Height="223" Visibility="Collapsed" />
+        <Button x:Name="btnChatta" Content="Chatta" HorizontalAlignment="Left" Margin="458,10,0,0" VerticalAlignment="Top" Height="48" Width="125"  Visibility="Collapsed" />
+        <Button Name="btnGioca" Content="Gioca" Margin="627,10,48,0" VerticalAlignment="Top" Height="48"  Width="125 "  Visibility="Collapsed" />
+        <TextBox x:Name="txtInvia" HorizontalAlignment="Left" Margin="425,155,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="301" Height="36"  Visibility="Collapsed" />
+        <Button Name="btnInvia" Content="Invia" HorizontalAlignment="Left" Margin="534,232,0,0" VerticalAlignment="Top" Width="65"  Visibility="Collapsed" />
+        <!--<Image Source="\Images\forbici.png" Height="100" Width="100" Margin="87,256,613,78"/>
+        <Image Height="100" Width="100" Margin="87,256,613,78"/>
+        <Image Height="100" Width="100" Margin="335,256,365,78"/>-->
 
     </Grid>
 </Window>
