@@ -25,7 +25,7 @@ namespace SOCKET
 
             foreach (Contatto c in Contatti)
             {
-                sw.WriteLine(c.Nome + ", " + c.Indirizzo + " : " + c.Porta);
+                sw.WriteLine(c.Nome + "," + c.Indirizzo + "," + c.Porta);
             }
 
 
