@@ -8,9 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Files\agenda.txt" />
     <None Remove="Images\carta.png" />
     <None Remove="Images\forbici.png" />
     <None Remove="Images\sasso.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Files\agenda.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>

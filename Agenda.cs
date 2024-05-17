@@ -18,33 +18,34 @@ namespace SOCKET
             LeggiAgenda();
         }
 
-        public void AggiungiContatto(string nome, string ip,string porta)
+        public void AggiungiContatto(string nome, string ip, string porta)
         {
-            Contatti.Add(new Contatto(nome, ip,porta));
-            StreamWriter sw = new StreamWriter("agenda.txt",true);
-            sw.WriteLine(nome+","+ip+","+porta);
+            Contatti.Add(new Contatto(nome, ip, porta));
+            StreamWriter sw = new StreamWriter(System.IO.Path.Combine(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName, "Files/agenda.txt"), true);
+            sw.WriteLine(nome + "," + ip + "," + porta);
             sw.Close();
         }
         public void LeggiAgenda()
         {
-            StreamReader sr = new StreamReader("agenda.txt");
+            StreamReader sr = new StreamReader(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Files/agenda.txt"));
             string line = "";
-            
+
             while (line != null)
             {
                 line = sr.ReadLine();
-                if(line != null)
+                if (line != null)
                 {
                     string[] info = line.Split(",");
                     Contatti.Add(new Contatto(info[0], info[1], info[2]) { });
                 }
-               
+
             }
             sr.Close();
         }
     }
 
-    internal class Contatto {
+    internal class Contatto
+    {
         public string Nome { get; set; }
         public string Indirizzo { get; set; }
         public string Porta { get; set; }
@@ -55,5 +56,5 @@ namespace SOCKET
             Porta = porta;
         }
     }
-    
+
 }
