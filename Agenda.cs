@@ -21,8 +21,14 @@ namespace SOCKET
         public void AggiungiContatto(string nome, string ip, string porta)
         {
             Contatti.Add(new Contatto(nome, ip, porta));
-            StreamWriter sw = new StreamWriter(System.IO.Path.Combine(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName, "Files/agenda.txt"), true);
-            sw.WriteLine(nome + "," + ip + "," + porta);
+            StreamWriter sw = new StreamWriter(System.IO.Path.Combine(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName, "Files/agenda.txt"));
+
+            foreach (Contatto c in Contatti)
+            {
+                sw.WriteLine(c.Nome + ", " + c.Indirizzo + " : " + c.Porta);
+            }
+
+
             sw.Close();
         }
         public void LeggiAgenda()
